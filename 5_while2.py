@@ -12,16 +12,19 @@
 
     Пользователь: Что делаешь?
     Программа: Программирую
-    
+
 """
 
 questions_and_answers = {}
 
 def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
+    repeat = "y"
+    while repeat.lower() == "y":
+        answer = input("Пользователь: ").capitalize()
+        answer_bot = answers_dict.pop(answer, "Ответа нет")
+        print(f"Программа: {answer_bot}")
+        repeat = input("Хотите здать ворос еще раз? " +
+                       "Введите y/да, n/нет.")
+
 if __name__ == "__main__":
     ask_user(questions_and_answers)
